@@ -6,19 +6,21 @@ import {
 } from "redux-persist";
 import sessionStorage from "redux-persist/lib/storage/session";
 import adminReducer from "./adminSlice";
-import { configureStore } from "@reduxjs/toolkit";
+import authReducer from "./authSlice";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 const persistConfig = {
   key: "root",
   storage: sessionStorage,
 };
-
-const persistedReducer = persistReducer(persistConfig, adminReducer);
+const rootReducer = combineReducers({
+  admin: adminReducer,
+  auth: authReducer,
+});
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: {
-    admin: persistedReducer,
-  },
+  reducer: persistedReducer,
   devTools: import.meta.env.MODE !== "production",
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

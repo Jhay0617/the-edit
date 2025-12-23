@@ -11,6 +11,8 @@ import { useSelector } from "react-redux";
 import { Toaster } from "sonner";
 import UserManagement from "./pages/UserManagement";
 import Settings from "./pages/Settings";
+import ProtectedRoute from "./features/ProtectedRoute";
+import Login from "./pages/Login";
 
 function App() {
   const isDarkMode = useSelector((state) => state.admin.isDarkMode);
@@ -29,12 +31,19 @@ function App() {
         <GlobalStyles />
         <BrowserRouter>
           <Routes>
-            <Route path="/admin" element={<AppLayout />}>
-              <Route index element={<Dashboard />} />
-              <Route path="inventory" element={<Inventory />} />
-              <Route path="users" element={<UserManagement />} />
-              <Route path="settings" element={<Settings />} />
+            <Route path="/login" element={<Login />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="/admin" element={<AppLayout />}>
+                <Route index element={<Dashboard />} />
+                <Route path="inventory" element={<Inventory />} />
+                <Route path="users" element={<UserManagement />} />
+                <Route path="settings" element={<Settings />} />
+              </Route>
             </Route>
+            <Route
+              path="/"
+              element={<Navigate to="/admin/dashboard" replace />}
+            />
             <Route path="*" element={<Navigate to="/admin" replace />} />
           </Routes>
         </BrowserRouter>
