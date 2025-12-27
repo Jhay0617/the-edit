@@ -5,7 +5,7 @@ export const SwitchWrapper = styled.div`
   align-items: center;
   gap: 12px;
   padding: 16px;
-  margin-top: auto; /* Keeps it at the bottom of your Sidebar */
+  margin-top: auto; 
   border-top: 1px solid ${(props) => props.theme.border};
 
   @media (max-width: 768px) {

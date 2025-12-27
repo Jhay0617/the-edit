@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-// ✅ The wrapper that aligns buttons to the right
 export const ButtonGroup = styled.div`
   display: flex;
   justify-content: flex-end;
