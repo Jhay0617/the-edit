@@ -66,7 +66,7 @@ function Login() {
           <FormGroup style={{ marginTop: "20px" }}>
             <label>Security Password</label>
             <input
-              type="password"
+              type="text"
               placeholder="admin123"
               {...register("password", { required: "Password is required" })}
             />
