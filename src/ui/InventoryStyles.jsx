@@ -6,7 +6,7 @@ export const InventoryWrapper = styled.div`
   flex-direction: column;
   gap: 20px;
 
-  /* Entrance animation for that premium 2025 feel */
+  
   animation: fadeIn 0.5s ease-out;
 
   @keyframes fadeIn {

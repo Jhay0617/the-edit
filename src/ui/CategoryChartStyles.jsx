@@ -5,7 +5,7 @@ export const ChartCard = styled.div`
   padding: 24px;
   border-radius: 24px;
   border: 1px solid ${(props) => props.theme.border};
-  grid-column: span 2; /* Takes up 2 Bento slots */
+  grid-column: span 2;
   min-height: 300px;
 `;
 

@@ -31,7 +31,6 @@ function Login() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    // Logic: Practice early return if fields are empty
     if (!data.email || !data.password) return;
 
     const result = await handleLogin(data.email, data.password);
@@ -68,7 +67,7 @@ function Login() {
             <label>Security Password</label>
             <input
               type="password"
-              placeholder="••••••••"
+              placeholder="admin123"
               {...register("password", { required: "Password is required" })}
             />
           </FormGroup>

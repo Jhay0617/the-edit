@@ -19,7 +19,7 @@ export const StyledTable = styled.table`
   border-collapse: separate;
   border-spacing: 0 10px;
 
-  /* 1. HIDE HEADERS ON MOBILE */
+
   thead {
     @media (max-width: 768px) {
       display: none;
@@ -35,7 +35,7 @@ export const StyledTable = styled.table`
     color: ${(props) => props.theme.textSecondary};
   }
 
-  /* 2. TRANSFORM ROWS INTO CARDS */
+
   tr {
     @media (max-width: 768px) {
       display: flex;
@@ -56,7 +56,7 @@ export const StyledTable = styled.table`
     border-bottom: 1px solid ${(props) => props.theme.border};
     font-size: 14px;
 
-    /* Desktop Border Logic */
+
     &:first-child {
       border-left: 1px solid ${(props) => props.theme.border};
       border-top-left-radius: 12px;
@@ -68,13 +68,12 @@ export const StyledTable = styled.table`
       border-bottom-right-radius: 12px;
     }
 
-    /* 3. MOBILE CELL LAYOUT (Label: Value) */
     @media (max-width: 768px) {
       display: flex;
       justify-content: space-between;
       align-items: center;
       background: transparent;
-      border: none !important; /* Remove desktop borders */
+      border: none !important; 
       padding: 10px 0;
       border-bottom: 1px solid ${(props) => props.theme.border} !important;
 
@@ -85,7 +84,7 @@ export const StyledTable = styled.table`
         gap: 20px;
       }
 
-      /* Use the 'data-label' attribute to show headers on mobile */
+
       &::before {
         content: attr(data-label);
         font-weight: 700;
@@ -114,7 +113,7 @@ export const ActionButton = styled.button`
   }
 
   @media (max-width: 768px) {
-    flex: 1; /* Make buttons equal width on mobile */
+    flex: 1;
     justify-content: center;
   }
 `;
